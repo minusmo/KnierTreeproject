@@ -32,6 +32,16 @@ circle.graphics
 
 stage.addChild(circle);
 
+// 특정위치(원의 중심)에 특정 텍스트를 삽입하는 함수.
+function drawText(x, y, text) {
+  let newText = new createjs.Text(text, "20px Arial", "#000000");
+  newText.textAlign = "center";
+  newText.x = x;
+  newText.y = y + 40;
+  stage.addChild(newText);
+  return;
+}
+
 // 특정 위치에 원을 그리는 함수. 선 스타일 과 색깔, 원의 반지름도 수정가능하도록 바꿀 수 있음.
 function drawCircle(x, y) {
   let newCircle = new createjs.Shape();
