@@ -22,15 +22,13 @@ canvas.height = canvas.offsetHeight;
 
 // stage를 생성한다.
 const stage = new createjs.Stage("canvas");
-let circle = new createjs.Shape();
+// let circle = new createjs.Shape();
 
-circle.graphics
-  .setStrokeStyle(1)
-  .beginStroke("#000000")
-  .beginFill("red")
-  .drawCircle(0.5 * canvas.width, 0.2 * canvas.height, 40);
-
-stage.addChild(circle);
+// circle.graphics
+//   .setStrokeStyle(1)
+//   .beginStroke("#000000")
+//   .beginFill("red")
+//   .drawCircle(0.5 * canvas.width, 0.1 * canvas.height, 20);
 
 // 특정위치(원의 중심)에 특정 텍스트를 삽입하는 함수.
 function drawText(x, y, text) {
@@ -50,7 +48,7 @@ function drawCircle(x, y) {
     .setStrokeStyle(1)
     .beginStroke("#000000")
     .beginFill("red")
-    .drawCircle(x, y, 40);
+    .drawCircle(x, y, 20);
   return newCircle;
 }
 
@@ -82,5 +80,9 @@ function drawNode(x, y, node) {
   }
 }
 
+let circle = drawCircle(0.5 * canvas.width, 0.1 * canvas.height, 20);
+stage.addChild(circle);
+
 console.log(stage.children);
+
 stage.update();
