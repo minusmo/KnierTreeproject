@@ -1,0 +1,23 @@
+@import "./reset.css";
+
+* {
+  box-sizing: border-box;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#input {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+  border: 1px solid black;
+}
+#svg-container {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+  border: 1px solid black;
+}
