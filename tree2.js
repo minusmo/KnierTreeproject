@@ -81,26 +81,26 @@ const s = new sigma({
   },
   settings: {
     scalingMode: "inside",
-    sideMargin: 10,
-    minNodeSize: 1,
-    maxNodeSize: 3,
-    minEdgeSize: 0.5,
-    maxEdgeSize: 2
-    zoomMin: 0.5
+    sideMargin: 1,
+    minNodeSize: 5,
+    maxNodeSize: 10,
+    minEdgeSize: 1,
+    maxEdgeSize: 2,
+    zoomMin: 1
   }
 });
 
 // 예시 자료형
 
 const json = {
-    root: {
-        val: 10,
-        leftChild: {
-            val: 5
-        }
-        rightChild: {
-            val: 15,
-            rightChild: 16
-        }
+  root: {
+    val: 10,
+    leftChild: {
+      val: 5
+    },
+    rightChild: {
+      val: 15,
+      rightChild: 16
     }
-}
+  }
+};
