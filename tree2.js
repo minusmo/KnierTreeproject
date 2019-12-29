@@ -253,7 +253,7 @@ let e = "e";
 let parentId;
 let idNCount = 0;
 let idECount = 0;
-let initSize = 1;
+let initSize = 4;
 
 function drawNode(x, y, node, initDepth = 0, node_size) {
   idNCount++;
@@ -308,8 +308,9 @@ const init = () => {
         autoRescale: true,
         scalingMode: "inside",
         sideMargin: 1,
-        minNodeSize: 1,
-        maxNodeSize: 10,
+        borderSize: 1,
+        minNodeSize: 0.5,
+        maxNodeSize: 20,
         minEdgeSize: 1,
         maxEdgeSize: 2,
         zoomMin: 1,
