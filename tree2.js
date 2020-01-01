@@ -274,7 +274,7 @@ function drawNode(x, y, node, initDepth = 0, node_size) {
     let newLine = new Line(nId, n + (idNCount + 1), eId);
     console.log(newLine);
     g.edges.push(newLine);
-    let nodeSize = node_size * 0.8;
+    let nodeSize = node_size * 0.5;
     drawNode(x - newDepth, y + 1, node.leftChild, initDepth + 1, nodeSize);
   }
 
@@ -287,7 +287,7 @@ function drawNode(x, y, node, initDepth = 0, node_size) {
     let newLine = new Line(parentId, n + (idNCount + 1), eId);
     console.log(newLine);
     g.edges.push(newLine);
-    let nodeSize = node_size * 0.8;
+    let nodeSize = node_size * 0.5;
     drawNode(x + newDepth, y + 1, node.rightChild, initDepth + 1, nodeSize);
   }
 
@@ -309,7 +309,7 @@ const init = () => {
         scalingMode: "inside",
         sideMargin: 1,
         borderSize: 1,
-        minNodeSize: 0.5,
+        minNodeSize: 10,
         maxNodeSize: 20,
         minEdgeSize: 1,
         maxEdgeSize: 2,
@@ -324,6 +324,16 @@ const init = () => {
 
     s.bind("overEdges", event => {
       console.log(event.data.edges[0]);
+    });
+
+    const gutter = document.querySelector(".gutter");
+    gutter.addEventListener("mouseup", () => {
+      s.refresh();
+    });
+
+    const canvas = document.getElementById("canvas");
+    canvas.addEventListener("resize", () => {
+      s.refresh();
     });
   }
 };
