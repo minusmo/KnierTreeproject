@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #container {
+        border: 3px solid red;
+        position: relative;
+        display: inline-block;
+      }
+    </style>
+    <link rel="stylesheet" href="lib/codemirror.css" />
+    <link rel="stylesheet" href="theme/monokai.css" />
+  </head>
+  <body>
+    <div id="container"></div>
+    <script src="lib/codemirror.js"></script>
+    <script src="./addon/edit/matchbrackets.js"></script>
+    <script src="mode/python/python.js"></script>
+    <script src="mode/javascript/javascript.js"></script>
+    <script>
+      const cont = document.getElementById("container");
+      const CM = CodeMirror(cont, {
+        value: "def function():",
+        mode: {
+          name: "python",
+          version: 3,
+          singleLineStringErrors: false,
+          hangingIndent: 4
+        },
+        lineNumbers: true,
+        indentUnit: 4,
+        matchBrackets: true,
+        styleActiveLine: true,
+        smartIndent: true,
+        theme: "monokai"
+      });
+      CM.setSize("500px", "500px");
+    </script>
+  </body>
+</html>

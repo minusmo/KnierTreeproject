@@ -274,8 +274,8 @@ function drawNode(x, y, node, initDepth = 0, node_size) {
     let newLine = new Line(nId, n + (idNCount + 1), eId);
     console.log(newLine);
     g.edges.push(newLine);
-    let nodeSize = node_size * 0.5;
-    drawNode(x - newDepth, y + 1, node.leftChild, initDepth + 1, nodeSize);
+    let nodeSize = node_size * 0.5; // let nodeSize = newDepth
+    drawNode(x - nodeSize, y + 1, node.leftChild, initDepth + 1, nodeSize);
   }
 
   parentId = nId;
@@ -288,7 +288,7 @@ function drawNode(x, y, node, initDepth = 0, node_size) {
     console.log(newLine);
     g.edges.push(newLine);
     let nodeSize = node_size * 0.5;
-    drawNode(x + newDepth, y + 1, node.rightChild, initDepth + 1, nodeSize);
+    drawNode(x + nodeSize, y + 1, node.rightChild, initDepth + 1, nodeSize);
   }
 
   return;
@@ -317,7 +317,7 @@ const init = () => {
         zoomMax: 10,
         enableEdgeHovering: true,
         labelSize: "proportional",
-        labelSizeRatio: 2,
+        labelSizeRatio: 1.5,
         edgeHoverExtremities: true
       }
     });
