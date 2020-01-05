@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+#header {
+  display: block;
+  height: 25px;
+  background-color: rgb(100, 100, 256);
+  color: black;
+  font-weight: 700;
+  font-size: 3vh;
+  text-align: center;
+  overflow: hidden;
+}
+
 #container {
   display: flex;
   flex-wrap: wrap;
@@ -25,14 +36,6 @@
 #lower {
   flex: 1 1 auto;
 }
-
-/* #upperCode {
-  box-sizing: content-box;
-}
-
-#lowerCode {
-  box-sizing: content-box;
-} */
 
 .gutter {
   background-color: black;
@@ -58,14 +61,15 @@
   cursor: row-resize;
 }
 
-/* .split {
-  overflow-y: auto;
-  overflow-x: hidden;
-} */
-
 .CodeMirror {
   border-left: 1px solid white;
   border-right: 1px solid white;
   border-top: 3px solid greenyellow;
   border-bottom: 3px solid greenyellow;
+}
+
+#submit {
+  position: relative;
+  float: right;
+  top: 80%;
 }
