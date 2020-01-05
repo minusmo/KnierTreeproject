@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <title>TreeProject2</title>
+    <!-- codemirror style sheets -->
+    <link rel="stylesheet" href="editor/lib/codemirror.css" />
+    <link rel="stylesheet" href="editor/theme/monokai.css" />
+    <link rel="stylesheet" href="editor/addon/lint/lint.css" />
     <link rel="stylesheet" href="./index2.css" />
     <!-- START SIGMA IMPORTS -->
     <script src="./src/sigma.core.js"></script>
@@ -56,10 +60,26 @@
   </head>
   <body>
     <div id="container">
-      <div id="input"></div>
+      <div id="codeBox">
+        <div id="upper">
+          <div class="description">설명</div>
+        </div>
+        <div id="lower">
+          <div class="description">설명</div>
+        </div>
+      </div>
       <div id="canvas"></div>
     </div>
+    <!-- Split.js script -->
     <script src="split.js"></script>
+
     <script src="tree2.js"></script>
+    <!-- codemirror scripts -->
+    <script src="editor/lib/codemirror.js"></script>
+    <script src="editor/addon/edit/matchbrackets.js"></script>
+    <script src="editor/mode/python/python.js"></script>
+    <script src="editor/addon/lint/lint.js"></script>
+    <!-- <script src="editor/mode/javascript/javascript.js"></script> -->
+    <script src="editor.js"></script>
   </body>
 </html>

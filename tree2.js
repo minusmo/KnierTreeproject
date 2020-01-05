@@ -261,7 +261,7 @@ function drawNode(x, y, node, initDepth = 0, node_size) {
 
   if (node.val !== null) {
     let newNode = new Node(x, y, nId, String(node.val), node_size);
-    console.log(newNode);
+    // console.log(newNode);
     g.nodes.push(newNode);
   }
 
@@ -272,7 +272,7 @@ function drawNode(x, y, node, initDepth = 0, node_size) {
     let eId = e + idECount;
 
     let newLine = new Line(nId, n + (idNCount + 1), eId);
-    console.log(newLine);
+    // console.log(newLine);
     g.edges.push(newLine);
     let nodeSize = node_size * 0.5; // let nodeSize = newDepth
     drawNode(x - nodeSize, y + 1, node.leftChild, initDepth + 1, nodeSize);
@@ -285,7 +285,7 @@ function drawNode(x, y, node, initDepth = 0, node_size) {
     let eId = e + idECount;
 
     let newLine = new Line(parentId, n + (idNCount + 1), eId);
-    console.log(newLine);
+    // console.log(newLine);
     g.edges.push(newLine);
     let nodeSize = node_size * 0.5;
     drawNode(x + nodeSize, y + 1, node.rightChild, initDepth + 1, nodeSize);
@@ -318,23 +318,25 @@ const init = () => {
         enableEdgeHovering: true,
         labelSize: "proportional",
         labelSizeRatio: 1.5,
-        edgeHoverExtremities: true
+        edgeHoverExtremities: true,
+        minArrowSize: 1
       }
     });
 
     s.bind("overEdges", event => {
-      console.log(event.data.edges[0]);
+      // console.log(event.data.edges[0]);
     });
 
-    const gutter = document.querySelector(".gutter");
-    gutter.addEventListener("mouseup", () => {
+    const gutter = document.querySelectorAll(".gutter");
+    // console.log(gutter);
+    gutter[1].addEventListener("mouseup", () => {
       s.refresh();
     });
 
-    const canvas = document.getElementById("canvas");
-    canvas.addEventListener("resize", () => {
-      s.refresh();
-    });
+    // const canvas = document.getElementById("canvas");
+    // canvas.addEventListener("resize", () => {
+    //   s.refresh();
+    // });
   }
 };
 

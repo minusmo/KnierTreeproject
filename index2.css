@@ -8,19 +8,64 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: stretch;
 }
 
-#input {
+#codeBox {
   flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
   border: 1px solid black;
 }
+
+#upper {
+  flex: 1 1 auto;
+}
+
+#lower {
+  flex: 1 1 auto;
+}
+
+/* #upperCode {
+  box-sizing: content-box;
+}
+
+#lowerCode {
+  box-sizing: content-box;
+} */
 
 .gutter {
   background-color: black;
   cursor: col-resize;
+  z-index: 6;
 }
 #canvas {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   height: 100vh;
   border: 1px solid black;
+}
+
+.description {
+  height: 100px;
+  background-color: grey;
+  color: white;
+  z-index: 6;
+  position: relative;
+}
+
+#codeBox .gutter-vertical {
+  background-color: red;
+  cursor: row-resize;
+}
+
+/* .split {
+  overflow-y: auto;
+  overflow-x: hidden;
+} */
+
+.CodeMirror {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-top: 3px solid greenyellow;
+  border-bottom: 3px solid greenyellow;
 }
